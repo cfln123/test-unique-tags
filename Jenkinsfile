@@ -1,6 +1,10 @@
 @Library(['ciinabox-unique-tags']) _
 
 pipeline {
+  agent {
+    label 'docker'
+  }
+
   environment {
     OPS_ACCOUNT_ID = 537712071186
     AWS_REGION     = 'us-east-1'
@@ -9,10 +13,6 @@ pipeline {
   }
 
   stages {
-    agent {
-      label 'docker'
-    }
-
     stage('Test') {
       steps {
         ecr accountId: env.OPS_ACCOUNT_ID,

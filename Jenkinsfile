@@ -1,4 +1,4 @@
-@Library()
+@Library(['ciinabox-unique-tags']) _
 
 agent {
   label 'docker'
